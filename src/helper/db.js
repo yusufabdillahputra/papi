@@ -14,7 +14,7 @@ module.exports = {
     })
   },
   post: (prepare, resolve, reject) => {
-    conn.query(prepare.sql, prepare.values, function (error, result) {
+    return conn.query(prepare.sql, prepare.values, function (error, result) {
       if (error) reject(error)
       resolve(result)
     })
