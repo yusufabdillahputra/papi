@@ -4,7 +4,7 @@ const primaryKey = 'id_country'
 
 module.exports = {
   createData : async (req) => {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const prepare = {
         sql : `INSERT INTO ${table} SET ?`,
         values : req.body
@@ -13,7 +13,7 @@ module.exports = {
     })
   },
   readAll : async (req) => {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const prepare = {
         sql : `SELECT * FROM ${table} ORDER BY name_country ASC`
       }
