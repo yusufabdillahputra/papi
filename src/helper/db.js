@@ -24,6 +24,7 @@ module.exports = {
   delete: (prepare, resolve, reject) => {
     conn.query(prepare.sql, prepare.values, function (error, result) {
       if (error) reject(error)
+      console.log(result)
       resolve(result)
     })
   }
