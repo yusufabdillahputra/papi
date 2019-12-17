@@ -14,7 +14,6 @@ module.exports = {
   readAll: async (req, res) => {
     try {
       const model = await countryModel.readAll(req)
-      console.log(model)
       await response(res, 200, 200, model)
     } catch (error) {
       response(res, 200, 200, error)
