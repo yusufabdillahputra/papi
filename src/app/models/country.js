@@ -1,9 +1,8 @@
-const { post } = require('../../helper/db')
+const { post, get } = require('../../helper/db')
 const table = 'tbl_country'
 const primaryKey = 'id_country'
 
 module.exports = {
-
   createData : async (req) => {
     new Promise((resolve, reject) => {
       const prepare = {
@@ -11,6 +10,14 @@ module.exports = {
         values : req.body
       }
       post(prepare, resolve, reject)
+    })
+  },
+  readAll : async (req) => {
+    new Promise((resolve, reject) => {
+      const prepare = {
+        sql : `SELECT * FROM ${table} ORDER BY name_country ASC`
+      }
+      get(prepare, resolve, reject)
     })
   }
 
