@@ -8,7 +8,7 @@ module.exports = {
       const model = await countryModel.createData(req)
       await response(res, 200, 200, model)
     } catch (error) {
-      response(res, 200, 200, error)
+      await response(res, 200, 200, error)
     }
   },
   readAll: async (req, res) => {
@@ -16,7 +16,23 @@ module.exports = {
       const model = await countryModel.readAll(req)
       await response(res, 200, 200, model)
     } catch (error) {
-      response(res, 200, 200, error)
+      await response(res, 200, 200, error)
+    }
+  },
+  updateData: async (req, res) => {
+    try {
+      const model = await countryModel.updateData(req)
+      await response(res, 200, 200, model)
+    } catch (error) {
+      await response(res, 200, 200, error)
+    }
+  },
+  deleteData: async (req, res) =>  {
+    try {
+      const model = await countryModel.deleteData(req)
+      await response(res, 200, 200, model)
+    } catch (error) {
+      await response(res, 200, 200, error)
     }
   }
 

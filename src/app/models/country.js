@@ -1,4 +1,4 @@
-const { post, get, search } = require('../../helper/db')
+const { post, get, put, search, drop } = require('../../helper/db')
 
 const table = 'tbl_country'
 const primaryKey = 'id_country'
@@ -26,6 +26,26 @@ module.exports = {
       }
     })
   },
-
+  updateData: async (req) => {
+    return new Promise((resolve, reject) => {
+      const prepare = {
+        sql: `UPDATE ${table} SET ? WHERE ${primaryKey} = ?`,
+        values: [
+          req.body,
+          req.params[primaryKey]
+        ]
+      }
+      put(prepare, resolve, reject)
+    })
+  },
+  deleteData: async (req) => {
+    return new Promise((resolve, reject) => {
+      const prepare = {
+        sql: `DELETE FROM ${table} WHERE ${primaryKey} = ?`,
+        values: req.params[primaryKey]
+      }
+      drop(prepare, resolve, reject)
+    })
+  }
 
 }
