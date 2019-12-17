@@ -1,10 +1,10 @@
 require('dotenv/config')
-const connection = require('../config/mysql')
+const conn = require('../config/mysql')
 
 module.exports = {
-  connection,
+  conn,
   query: (prepare, resolve, reject) => {
-    connection.query({
+    conn.query({
       sql: prepare.sql,
       values: prepare.values
     }, function (error, result, fields) {
@@ -14,7 +14,7 @@ module.exports = {
     })
   },
   post: (prepare, resolve, reject) => {
-    connection.query(prepare.sql, prepare.values, function (error, result) {
+    conn.query(prepare.sql, prepare.values, function (error, result) {
       if (error) reject(error)
       resolve(result)
     })

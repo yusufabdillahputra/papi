@@ -7,11 +7,8 @@ module.exports = {
   createData : async (req) => {
     new Promise((resolve, reject) => {
       const prepare = {
-        sql: `INSERT INTO ${table} (name_country, created_by) VALUES (?, ?)`,
-        values: [
-          req.body.name_country,
-          req.body.created_by
-        ]
+        sql: `INSERT INTO ${table} SET ?`,
+        values: req.body
       }
       post(prepare, resolve, reject)
     })
