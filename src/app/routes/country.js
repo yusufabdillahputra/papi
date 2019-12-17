@@ -1,10 +1,12 @@
 const Router = require('express').Router()
 
 const {
-  createData
+  createData,
+  readAll
 } = require('../controllers/country')
 
 Router
 .post('/', createData)
+.get('/', readAll)
 
 module.exports = Router
