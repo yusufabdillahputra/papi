@@ -6,9 +6,9 @@ module.exports = {
   createData: async (req, res) => {
     try {
       const model = await countryModel.createData(req)
-      await response(res, 200, 200, model)
+      response(res, 200, 200, model)
     } catch (error) {
-      await response(res, 200, 200, error)
+      response(res, 200, 200, error)
     }
   }
 
