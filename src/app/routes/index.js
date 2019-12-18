@@ -9,6 +9,7 @@ const city = require('./city')
 const passenger = require('./passenger')
 const orderPlane = require('./orderPlane')
 const ticketPlane = require('./ticketPlane')
+const transactionPlane = require('./transactionPlane')
 
 Router
   .use('/', home)
@@ -20,5 +21,6 @@ Router
   .use('/passenger', passenger)
   .use('/orderpl', orderPlane)
   .use('/ticketpl', ticketPlane)
+  .use('/transactionpl', transactionPlane)
 
 module.exports = Router
