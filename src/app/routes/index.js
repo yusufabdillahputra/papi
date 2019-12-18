@@ -8,6 +8,7 @@ const users = require('./users')
 const city = require('./city')
 const passenger = require('./passenger')
 const orderPlane = require('./orderPlane')
+const ticketPlane = require('./ticketPlane')
 
 Router
   .use('/', home)
@@ -18,5 +19,6 @@ Router
   .use('/city', city)
   .use('/passenger', passenger)
   .use('/orderpl', orderPlane)
+  .use('/ticketplane', ticketPlane)
 
 module.exports = Router
