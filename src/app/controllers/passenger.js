@@ -1,5 +1,5 @@
 const {response} = require('../../helper/response.js')
-passengerModel = require('../models/passenger')
+const passengerModel = require('../models/passenger')
 
 module.exports={
 

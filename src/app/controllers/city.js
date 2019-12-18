@@ -1,5 +1,5 @@
 const {response} = require('../../helper/response')
-cityModel = require('../models/city')
+const cityModel = require('../models/city')
 
 module.exports={
 
