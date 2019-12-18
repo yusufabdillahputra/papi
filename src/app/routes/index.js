@@ -19,6 +19,6 @@ Router
   .use('/city', city)
   .use('/passenger', passenger)
   .use('/orderpl', orderPlane)
-  .use('/ticketplane', ticketPlane)
+  .use('/ticketpl', ticketPlane)
 
 module.exports = Router
