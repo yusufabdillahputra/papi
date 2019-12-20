@@ -10,9 +10,11 @@ const passenger = require('./passenger')
 const orderPlane = require('./orderPlane')
 const ticketPlane = require('./ticketPlane')
 const transactionPlane = require('./transactionPlane')
+const auth = require('./auth')
 
 Router
   .use('/', home)
+  .use('/auth', auth)
   .use('/country', country)
   .use('/mst_plane', mst_plane)
   .use('/airport', airport)
